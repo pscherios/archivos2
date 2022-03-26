@@ -30,9 +30,10 @@ int main(){
 
 void buscar_alumno(){
 	FILE* archivo=fopen(nombre_archivo,"rb");
-	int pos=0,ind=0,cod=0;
+	int pos=0,ind=0,cod=0,*&p_cod;
 	cout<<"Que codigo desea ver: ";
 	cin>>cod;
+	p_cod=&cod;
 	
 	Alumno alumno;
 	fread(&alumno,sizeof(Alumno),1,archivo);
